@@ -6,11 +6,12 @@ import { Counter } from "./components/counter";
 import { AboutPage } from "./pages/about-page";
 import { ProfilePage } from "./pages/profile-page";
 import { useTheme } from "./theme/useTheme";
+import { classes } from "./helpers/classes";
 
 export const App = () => {
   const { theme, toggleTheme } = useTheme();
   return (
-    <div className={["app"].concat(theme).join(" ")}>
+    <div className={classes({ cls: "app", mods: { dark: theme === "dark" } })}>
       <Counter />
       <button onClick={toggleTheme}>dark\light</button>
       <Link to="/about">about</Link>
