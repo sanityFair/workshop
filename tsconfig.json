@@ -1,22 +1,27 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "ESNext",
-    "target": "es5",
-    "jsx": "react-jsx",
-    "allowJs": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "baseUrl": ".",
-    "paths": {
-      "config":["./config/*"]
-    }
-  },
-  "ts-node":{
     "compilerOptions": {
-      "module": "CommonJS"
-    }
-  }
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "jsx": "react-jsx",
+        "allowJs": false,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "baseUrl": "./",
+        "paths": {
+            "~/*": ["src/*"],
+            "pages":["./src/pages"],
+            "app":["./src/app"],
+            "shared":["./src/shared"],
+        },
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS",
+            "baseUrl": "./"
+        }
+    },
+    // "include": ["src/**/*.ts","src/**/*.tsx","src/**/*.ts","src/*.tsx","src/*.d.ts","src/**/**/**/*.ts","src/**/**/**/*.ts"]
+
 }

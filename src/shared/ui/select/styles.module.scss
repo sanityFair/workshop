@@ -1,0 +1,55 @@
+@import 'app/styles/index.scss';
+
+.container {
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-shadow: var(--style-neutral--gray-30);
+    background-color: var(--style-neutral--gray-70);
+    transition: all 0.2s ease;
+}
+
+.input {
+    color: var(--style-neutral--gray-30);
+    outline: none;
+    border: none;
+    letter-spacing: normal;
+    margin-right: 6px;
+    font: var(--body-1);
+    color: var(--style-neutral--gray-30);
+    background: transparent;
+    flex-grow: 1;
+    transition: all 0.2s ease;
+    caret-color: transparent; 
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.arrow {
+  color: var(--style-neutral--gray-30);
+  transition: all 0.2s ease;
+}
+
+// .input {
+//   border-radius: 0.5rem;
+//   width: 100%;
+//   padding: 1rem;
+//   box-shadow: var(--style-neutral--gray-30);
+//   background-color: var(--style-neutral--gray-70);
+//   font: var(--body-1);
+//   color: var(--style-neutral--gray-30);
+//   outline: none;
+//   border: none;
+//   letter-spacing: normal;
+//   transition: all 0.2s ease;
+// }
+
+.container:is(:hover) {
+  box-shadow: var(--effect-elevation--blue-1);
+  color: var(--style-main--blue-50);
+}
+
+.container:is(:hover) * {
+  color: var(--style-main--blue-50);
+}

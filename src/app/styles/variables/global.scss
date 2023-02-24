@@ -1,0 +1,33 @@
+:root {
+  --font-family-main: "Andale Mono", "Times New Roman", Serif;
+
+  --font-size-l: 24px;
+  --font-size-m: 16px;
+  --font-size-s: 14px;
+  --font-size-xs: 12px;
+  --font-size-xxs: 10px;
+
+  --font-line-l: 32px;
+  --font-line-m: 24px;
+  --font-line-s: 16px;
+  --font-line-xs: 8px;
+  --font-line-xxs: 0px;
+
+  --h1: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+
+  --h2: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+
+  --body-1: var(--font-size-s) / var(--font-line-s) 300 17px var(--font-family-main);
+
+  --strong--body: var(--font-size-s) / var(--font-line-s) 500
+    var(--font-family-main);
+
+  --body--small: var(--font-size-xs) / var(--font-line-xs)
+    var(--font-family-main);
+
+  --strong--body--very--small: var(--font-size-xxs) / var(--font-line-xxs)
+    var(--font-family-main);
+
+  --strong--body--very--small: var(--font-size-xxs) / var(--font-line-xxs) 500
+    var(--font-family-main);
+}

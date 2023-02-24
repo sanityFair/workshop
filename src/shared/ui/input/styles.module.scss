@@ -1,0 +1,18 @@
+.input {
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  box-shadow: var(--style-neutral--gray-30);
+  background-color: var(--style-neutral--gray-70);
+  font: var(--body-1);
+  color: var(--style-neutral--gray-30);
+  outline: none;
+  border: none;
+  letter-spacing: normal;
+  transition: all 0.2s ease;
+}
+
+.input:is(:hover, :focus) {
+  box-shadow: var(--effect-elevation--blue-1);
+  color: var(--style-main--blue-50);
+}

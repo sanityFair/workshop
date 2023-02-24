@@ -1,0 +1,31 @@
+.app.dark {
+  --bg-color: var(--style-neutral--gray-70);
+
+  --primary-color: #cfdbd5;
+  --secondary-color: #04ff04;
+
+  --style-heatmap--green--good-50: #249d10;
+  --style-heatmap--red--bad-50: #b53d2f;
+  --style-heatmap--yellow--neutral-50: #c2c539;
+  --style-main--blue-50: #79a5ff;
+  --style-main--blue-60: #8ca2ce;
+  --style-main--blue-80: #2e3748;
+  --style-main--blue-90: #4e5768;
+  --style-neutral--gray-10: #d4d5d7;
+  --style-neutral--gray-30: #bdbfc1;
+  --style-neutral--gray-40: #aeafb0;
+  --style-neutral--gray-50: #818385;
+  --style-neutral--gray-60: #535658;
+  --style-neutral--gray-70: #1f1f1f;
+  --style-neutral--white-100: #2d2f31;
+  
+  
+  --effect-elevation--blue-1: 0px 2px 6px rgba(16, 92, 250, 0.34),
+    0px 8px 8px rgba(16, 92, 250, 0.25);
+  --effect-elevation-1: 0px 5px 15px rgba(0, 0, 0, 0.15),
+    0px 4px 4px rgba(0, 0, 0, 0.05);
+  --effect-elevation-2: 0px 20px 20px rgba(0, 0, 0, 0.2),
+    0px 5px 13px rgba(0, 0, 0, 0.15);
+  --effect-elevation-3: 0px 10px 10px rgba(0, 0, 0, 0.3),
+    0px 25px 24px rgba(0, 0, 0, 0.4);
+}

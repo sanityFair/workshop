@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1676741947239" clover="3.2.0">
+  <project timestamp="1676741947239" name="All files">
+    <metrics statements="4" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="1" elements="11" coveredelements="7" complexity="0" loc="4" ncloc="4" packages="1" files="1" classes="1"/>
+    <file name="classes.ts" path="/Users/Artem/Documents/workshop/src/helpers/classes.ts">
+      <metrics statements="4" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="1"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="12" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>

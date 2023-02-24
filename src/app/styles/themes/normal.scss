@@ -1,0 +1,29 @@
+:root {
+  --bg-color: var(--style-neutral--gray-70);
+
+  --primary-color: #333533;
+  --secondary-color: #0449e0;
+
+  --style-heatmap--green--good-50: #1cb503;
+  --style-heatmap--red--bad-50: #ff513d;
+  --style-heatmap--yellow--neutral-50: #d2d700;
+  --style-main--blue-50: #105cfa;
+  --style-main--blue-60: #a5c2ff;
+  --style-main--blue-80: #e9f0ff;
+  --style-main--blue-90: #f4f8ff;
+  --style-neutral--gray-10: #333333;
+  --style-neutral--gray-30: #828282;
+  --style-neutral--gray-40: #bbbbbb;
+  --style-neutral--gray-50: #e1e1e1;
+  --style-neutral--gray-60: #f3f3f6;
+  --style-neutral--gray-70: #f8f8fa;
+  --style-neutral--white-100: #ffffff;
+  --effect-elevation--blue-1: 0px 2px 6px rgba(16, 92, 250, 0.34),
+    0px 8px 8px rgba(16, 92, 250, 0.25);
+  --effect-elevation-1: 0px 5px 15px rgba(0, 0, 0, 0.03),
+    0px 4px 4px rgba(0, 0, 0, 0.03);
+  --effect-elevation-2: 0px 10px 20px rgba(121, 133, 164, 0.15),
+    0px 5px 10px rgba(0, 0, 0, 0.04);
+  --effect-elevation-3: 0px 8px 8px rgba(126, 128, 134, 0.24),
+    0px 20px 24px rgba(178, 178, 181, 0.3);
+}

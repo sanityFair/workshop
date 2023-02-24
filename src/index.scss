@@ -1,0 +1,11 @@
+#root {
+    background: var(--bg-color);
+    color: var(--primary-color);
+    min-height: 100vh;
+    font-family: var(--font-family-main);
+    transition: background ease .2s;
+    font-size: var(--font-size-s);
+    font-style: normal;
+    line-height: 17px;
+    padding: 24px;
+  }

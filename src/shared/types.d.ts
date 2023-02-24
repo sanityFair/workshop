@@ -1,8 +1,4 @@
-import { expect, jest, test } from "@jest/globals";
-
-export { expect, jest, test };
-
-declare module "*.scss" {
+declare module "*.module.scss" {
   interface IClassNames {
     [className: string]: string;
   }

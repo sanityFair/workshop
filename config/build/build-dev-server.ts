@@ -4,7 +4,7 @@ import { BuildOptions } from "./types/config";
 
 export const buildDevServer = (options: BuildOptions): Configuration => ({
   port: options.port,
-  open: true,
+  open: false,
   historyApiFallback: true,
   https: {
     cert: path.resolve(__dirname, "../../cert.pem"),
