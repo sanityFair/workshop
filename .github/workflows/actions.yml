@@ -12,6 +12,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: gh api -H "Accept:\ application/vnd.github+json" -H "X-GitHub-Api-Version:\ 2022-11-28" /orgs/ORG/code-scanning/alerts
+              env:
+                GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
             - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
             - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
             - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
