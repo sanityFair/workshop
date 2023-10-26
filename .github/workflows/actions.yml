@@ -1,17 +1,9 @@
 name: GitHub Actions Demo
-on: pull_request_target
-permissions:
-  pull-requests: write
-  contents: write
-  issues: write
-  
+on: push
+
 jobs:
     dependabot:
         runs-on: ubuntu-latest
-        if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
         steps:
-            - name: Dependabot metadata
-              id: metadata
-              uses: dependabot/fetch-metadata@v1
-              with:
-                  github-token: "${{ secrets.GH_TOKEN }}"
+            - name: Checkout code
+              uses: actions/checkout@v2
