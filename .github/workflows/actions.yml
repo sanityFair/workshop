@@ -15,11 +15,6 @@ jobs:
               uses: actions/dependency-review-action@v2
               with:
                   fail-on-severity: low
-                  vulnerability-check: true
-                  comment-summary-in-pr: true
-                  license-check: true
-                  allow-licenses: GPL-3.0, BSD-3-Clause, MIT
-                  allow-ghsas: npm
                   repo-token: "${{ secrets.GH_TOKEN }}"
                   config-file: './.github/workflows/actions.yml'
                   base-ref: ${{ github.event.pull_request.base.sha || 'master' }}
