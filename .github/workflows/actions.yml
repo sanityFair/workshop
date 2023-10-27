@@ -3,19 +3,14 @@ on: [pull_request]
 
 permissions:
     contents: read
-    pull-requests: write
 
 jobs:
     dependency-review:
         runs-on: ubuntu-latest
         steps:
             - name: "Checkout Repository"
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
             - name: "Dependency Review"
-              uses: actions/dependency-review-action@v2
+              uses: actions/dependency-review-action@v3
               with:
-                  fail-on-severity: low
                   repo-token: "${{ secrets.GH_TOKEN }}"
-                  config-file: './.github/workflows/actions.yml'
-                  base-ref: ${{ github.event.pull_request.base.sha || 'master' }}
-                  head-ref: ${{ github.event.pull_request.head.sha || github.ref }}
