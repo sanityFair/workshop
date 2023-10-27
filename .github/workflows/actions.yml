@@ -21,3 +21,4 @@ jobs:
                   allow-licenses: GPL-3.0, BSD-3-Clause, MIT
                   allow-ghsas: npm
                   repo-token: "${{ secrets.GH_TOKEN }}"
+                  config-file: './.github/actions.yml'
