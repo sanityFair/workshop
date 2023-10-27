@@ -16,4 +16,4 @@ jobs:
         with:
             fail-on-severity: low
             comment-summary-in-pr: always
-            external-repo-token: "${{ secrets.GH_TOKEN }}"
+            repo-token: "${{ secrets.GH_TOKEN }}"
