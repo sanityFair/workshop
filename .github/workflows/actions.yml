@@ -48,7 +48,3 @@ jobs:
                       (MIT OR Apache-2.0) AND Unicode-DFS-2016,
                       OFL-1.1,
                       Apache-2.0 AND BSD-3-Clause AND MIT AND OFL-1.1
-            - name: Initialize CodeQL
-              uses: github/codeql-action/init@v2
-              with:
-                languages: typescript,javascript
