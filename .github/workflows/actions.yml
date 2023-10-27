@@ -15,7 +15,3 @@ jobs:
               uses: actions/dependency-review-action@v2
               with:
                   fail-on-severity: low
-                  repo-token: "${{ secrets.GH_TOKEN }}"
-                  config-file: './.github/workflows/actions.yml'
-                  base-ref: ${{ github.event.pull_request.base.sha || 'master' }}
-                  head-ref: ${{ github.event.pull_request.head.sha || github.ref }}
