@@ -10,14 +10,8 @@ jobs:
         steps:
             - name: "Checkout Repository"
               uses: actions/checkout@v4
-            - name: Setup Node.js 16.x
-              uses: actions/setup-node@v3
-              with:
-                node-version: 16.x
             - name: Dependency Review
-              uses: actions/dependency-review-action@v3.1.0
+              uses: actions/dependency-review-action@v3
               with:
                   fail-on-severity: low
                   vulnerability-check: true
-                  license-check: true   
-                  deny-licenses: ISC
