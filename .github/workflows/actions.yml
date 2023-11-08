@@ -8,10 +8,13 @@ jobs:
   dependency-review:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.base_ref }} ${{ github.head_ref }}"
       - name: 'Checkout Repository'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v3
         with:
-          deny-licenses: ISC
+         fail-on-severity: critical
+         allow-licenses: GPL-3.0, BSD-3-Clause, MIT, ISC
+         deny-licenses: LGPL-2.0, BSD-2-Clause
+         allow-ghsas: GHSA-abcd-1234-5679, GHSA-efgh-1234-5679
+         fail-on-scopes: development, runtime
