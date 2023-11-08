@@ -5,23 +5,16 @@
 # Source repository: https://github.com/actions/dependency-review-action
 # Public documentation: https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review#dependency-review-enforcement
 name: 'Dependency Review'
-on: workflow_dispatch
+on: [pull_request]
 
 permissions:
   contents: read
+
 jobs:
   dependency-review:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "fdafd"
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
       - name: 'Dependency Review'
-        uses: actions/dependency-review-action@v3
-        with:
-          retry-on-snapshot-warnings: true
-          vulnerability-check: true
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          base-ref: refs/heads/main
-          head-ref: refs/heads/feature/wf
-          license-check: false
+        uses: actions/dependency-review-action@v1
