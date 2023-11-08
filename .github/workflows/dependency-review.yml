@@ -14,6 +14,7 @@ jobs:
   dependency-review:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "${{ github.base_ref }} ${{ github.head_ref }}"
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
       - name: 'Dependency Review'
@@ -23,3 +24,5 @@ jobs:
           retry-on-snapshot-warnings: true
           vulnerability-check: true
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          base-ref: ${{ github.base_ref }}
+          head-ref: ${{ github.head_ref }}
