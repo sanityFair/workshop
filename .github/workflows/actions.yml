@@ -1,23 +1,20 @@
-name: "Dependency Review"
+name: "DP"
 on: [pull_request]
 
 permissions:
     contents: read
 
 jobs:
-    dependency-review:
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Checkout Repository"
-              uses: actions/checkout@v4
-            - name: Setup Node.js 16.x
-              uses: actions/setup-node@v3
-              with:
-                node-version: 16.x
-            - name: Dependency Review
-              uses: actions/dependency-review-action@v3.1.0
-              with:
-                  fail-on-severity: low
-                  vulnerability-check: true
-                  license-check: true   
-                  deny-licenses: ISC
+  dependency-review:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ github.base_ref }} ${{ github.head_ref }}"
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v3
+      - name: 'Dependency Review'
+        uses: actions/dependency-review-action@v3
+        with:
+          retry-on-snapshot-warnings: true
+          vulnerability-check: true
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          license-check: false
