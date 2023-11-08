@@ -14,7 +14,4 @@ jobs:
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v3
         with:
-          retry-on-snapshot-warnings: true
-          vulnerability-check: true
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          license-check: false
+          deny-licenses: ISC
