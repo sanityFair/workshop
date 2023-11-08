@@ -1,5 +1,5 @@
 name: "DP"
-on: [pull_request]
+on: [pull_request,push]
 
 permissions:
     contents: read
@@ -12,3 +12,5 @@ jobs:
         uses: actions/checkout@v4
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v3
+        with:
+          deny-licenses: ISC
