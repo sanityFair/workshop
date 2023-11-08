@@ -9,12 +9,11 @@ on: workflow_dispatch
 
 permissions:
   contents: read
-
 jobs:
   dependency-review:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.base_ref }} ${{ github.head_ref }}"
+      - run: echo "fdafd"
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
       - name: 'Dependency Review'
