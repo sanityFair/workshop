@@ -22,3 +22,4 @@ jobs:
           fail-on-severity: critical
           deny-licenses: LGPL-2.0, BSD-2-Clause
           allow-dependencies-licenses: 'pkg:npm/loadash, pkg:pip/requests'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
