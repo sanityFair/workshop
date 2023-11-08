@@ -20,9 +20,9 @@ jobs:
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v3
         with:
-          comment-summary-in-pr: always
           retry-on-snapshot-warnings: true
           vulnerability-check: true
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          base-ref: main
-          head-ref: feature/wf
+          base-ref: refs/heads/main
+          head-ref: refs/heads/feature/wf
+          license-check: false
