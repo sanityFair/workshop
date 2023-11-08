@@ -17,9 +17,9 @@ jobs:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
       - name: 'Dependency Review'
-        uses: actions/dependency-review-action@v1
+        uses: actions/dependency-review-action@v3
         with:
           fail-on-severity: critical
           deny-licenses: LGPL-2.0, BSD-2-Clause
-          allow-dependencies-licenses: 'pkg:npm/loadash, pkg:pip/requests'
+          deny-dependencies-licenses: 'pkg:npm/loadash, pkg:pip/requests'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
