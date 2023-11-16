@@ -21,3 +21,6 @@ jobs:
           issue_assignees: oke-py
           issue_labels: vulnerability
           dedupe_issues: true
+      - name: Print Status
+        if: (${{ success() }}
+        run: echo SUCCESS!
