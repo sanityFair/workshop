@@ -22,6 +22,7 @@ jobs:
           issue_assignees: oke-py
           issue_labels: vulnerability
           dedupe_issues: true
+          json_flag: true
       - name: Print Status Success
         if: steps.audit.outcome  == 'success'
         run: echo SUCCESS!
