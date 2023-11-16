@@ -14,6 +14,10 @@ jobs:
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 16
+      - run: npm ci
       - name: 'Run audit'
         id: audit
         uses: oke-py/npm-audit-action@v2
