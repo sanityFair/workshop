@@ -14,9 +14,8 @@ jobs:
       - name: 'Run audit'
         uses: oke-py/npm-audit-action@v2
         with:
-          audit_level: critical
+          audit_level: moderate
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          create_pr_comments: true
-          issue_labels: vulnerability
-          dedupe_issues: true
           issue_assignees: oke-py
+          issue_labels: vulnerability,test
+          dedupe_issues: true
