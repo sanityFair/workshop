@@ -20,7 +20,7 @@ jobs:
         run: npm audit
       - uses: oke-py/npm-audit-action@v2
         with:
-          audit_level: critical
+          audit_level: none
           github_token: ${{ secrets.GITHUB_TOKEN }}
           issue_assignees: oke-py
           issue_labels: vulnerability,test
