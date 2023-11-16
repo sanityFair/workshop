@@ -14,6 +14,7 @@ jobs:
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
       - name: 'Run audit'
+        id: audit
         uses: oke-py/npm-audit-action@v2
         with:
           audit_level: high
@@ -21,6 +22,9 @@ jobs:
           issue_assignees: oke-py
           issue_labels: vulnerability
           dedupe_issues: true
-      - name: Print Status
-        if: (${{ success() }}
+      - name: Print Status Success
+        if: steps.audit.outcome  == 'success'
         run: echo SUCCESS!
+      - name: Print Status failure
+        if: steps.audit.outcome  == 'failure'
+        run: echo failure!=(((
