@@ -19,3 +19,4 @@ jobs:
           create_pr_comments: true
           issue_labels: vulnerability
           dedupe_issues: true
+          issue_assignees: oke-py
