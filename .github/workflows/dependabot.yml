@@ -5,10 +5,7 @@
 # Source repository: https://github.com/actions/dependency-review-action
 # Public documentation: https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review#dependency-review-enforcement
 name: 'Dependency Review'
-on: [pull_request]
-
-permissions:
-  contents: read
+on: [workflow_dispatch]
 
 jobs:
   dependency-review:
@@ -16,11 +13,9 @@ jobs:
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
-      - name: install depends
-        run: npm audit
       - uses: oke-py/npm-audit-action@v2
         with:
-          audit_level: none
+          audit_level: low
           github_token: ${{ secrets.GITHUB_TOKEN }}
           issue_assignees: oke-py
           issue_labels: vulnerability,test
