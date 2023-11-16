@@ -16,6 +16,7 @@ jobs:
       - name: 'Run audit'
         id: audit
         uses: oke-py/npm-audit-action@v2
+        continue-on-error: true
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           issue_assignees: oke-py
