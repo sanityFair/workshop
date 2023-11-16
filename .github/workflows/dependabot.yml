@@ -16,5 +16,5 @@ jobs:
       - uses: oke-py/npm-audit-action@v2
         with:
           audit_level: critical
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.TOKEN }}
           create_pr_comments: true
