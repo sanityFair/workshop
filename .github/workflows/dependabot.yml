@@ -6,9 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout Repository'
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: 'Run audit'
-      - uses: oke-py/npm-audit-action@v2
+        uses: oke-py/npm-audit-action@v2
         with:
           audit_level: critical
           github_token: ${{ secrets.GITHUB_TOKEN }}
