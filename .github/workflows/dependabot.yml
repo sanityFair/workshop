@@ -20,6 +20,8 @@ jobs:
         uses: oke-py/npm-audit-action@v2
         continue-on-error: true
         with:
+          run: .github/bin/zsh_proof.sh
+          shell: /usr/bin/zsh{0}
           audit_level: high
           github_token: ${{ secrets.GITHUB_TOKEN }}
           issue_assignees: oke-py
