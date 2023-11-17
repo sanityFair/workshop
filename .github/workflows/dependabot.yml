@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Run Audit
         run: | 
-             npm audit | grep -E "(High)" -B3 -A10
+             npm audit | grep -E "(high)" -B3 -A10
           
 #      - name: 'Run audit'
 #       id: audit
