@@ -18,10 +18,7 @@ jobs:
       - name: Zsh-huh
         run: |
           node -v
-          which zsh || echo "No which zsh"
-          command -v zsh || echo "No command zsh"
-          ls -la /usr/bin/zsh || echo "No zsh at /usr/bin"
-          ls -la /bin/zsh || echo "No zsh at /bin/zsh"
+          npm audit
       - name: 'Run audit'
         id: audit
         uses: oke-py/npm-audit-action@v2
