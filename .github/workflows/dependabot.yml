@@ -23,14 +23,11 @@ jobs:
           ls -la /bin/zsh || echo "No zsh at /bin/zsh"
       - name: Run a zsh script as proof
         run: .github/workflows/zsh_proof.sh
-        shell: /usr/bin/zsh {0}
       - name: 'Run audit'
         id: audit
         uses: oke-py/npm-audit-action@v2
         continue-on-error: true
         with:
-          run: .github/bin/zsh_proof.sh
-          shell: /usr/bin/zsh{0}
           audit_level: high
           github_token: ${{ secrets.GITHUB_TOKEN }}
           issue_assignees: oke-py
