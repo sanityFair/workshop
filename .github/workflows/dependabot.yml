@@ -9,25 +9,18 @@ permissions:
 
 jobs:
   dependency-review:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
-      - name: Install zsh
-        run: sudo apt-get update; sudo apt-get install zsh;sudo apt install zsh-syntax-highlighting;sudo apt install nodejs
-      - name: Make zsh script executable
-        run: chmod +x .github/workflows/zsh_proof.sh
-      - name: Zsh-huh
+      - name: Install zsh-syntax-highlighting
         run: |
-          which zsh || echo "No which zsh"
-          command -v zsh || echo "No command zsh"
-          ls -la /usr/bin/zsh || echo "No zsh at /usr/bin"
-          ls -la /bin/zsh || echo "No zsh at /bin/zsh"
-          git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-          ls -la
-          source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+          brew update
+          brew install zsh-syntax-highlighting
+          brew install node
       - name: Run a zsh script as proof
-        run: .github/workflows/zsh_proof.sh
+        run: |
+          node -v
       - name: 'Run audit'
         id: audit
         uses: oke-py/npm-audit-action@v2
