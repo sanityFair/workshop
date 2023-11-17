@@ -16,7 +16,7 @@ jobs:
       - name: Install zsh
         run: sudo apt-get update; sudo apt-get install zsh;sudo apt install zsh-syntax-highlighting;sudo apt install nodejs
       - name: Run a zsh script as proof
-        run: .github/workflows/#!/usr/bin/zsh_proof.sh
+        run: .github/workflows/zsh_proof.sh
         shell: /usr/bin/zsh {0}
       - name: 'Run audit'
         id: audit
