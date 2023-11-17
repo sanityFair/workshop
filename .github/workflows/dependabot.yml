@@ -11,8 +11,6 @@ jobs:
   dependency-review:
     runs-on: macos-latest
     steps:
-      - name: 'Checkout Repository'
-        uses: actions/checkout@v4
       - name: Install zsh-syntax-highlighting
         run: |
           brew update
@@ -25,6 +23,8 @@ jobs:
           cat ~/.zshrc
           node -v
           npm audit
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
 #      - name: 'Run audit'
 #       id: audit
 #        uses: oke-py/npm-audit-action@v2
