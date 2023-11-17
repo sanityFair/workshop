@@ -18,7 +18,7 @@ jobs:
       - name: Run Audit
         id: audit
         run: | 
-             npm audit | grep -E "(high)" -B3 -A10
+             npm audit | grep -E "(High)" -B3 -A10
           
       - name: Print Status Success
         if: steps.audit.outcome  == 'success'
