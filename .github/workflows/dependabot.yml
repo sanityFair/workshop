@@ -10,8 +10,9 @@ permissions:
 jobs:
   dependency-review:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/zsh-users/zsh:5.9
+    defaults:
+      run:
+        shell: zsh
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
