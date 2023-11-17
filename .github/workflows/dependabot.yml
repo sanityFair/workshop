@@ -21,6 +21,7 @@ jobs:
       - name: Run a zsh script as proof
         shell: zsh {0}
         run: |
+          echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
           node -v
           npm audit
       - name: 'Run audit'
