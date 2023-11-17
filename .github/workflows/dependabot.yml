@@ -10,12 +10,11 @@ permissions:
 jobs:
   dependency-review:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: zsh
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
+      - name: Install zsh
+        run: sudo apt-get update; sudo apt-get install zsh;sudo apt install zsh-syntax-highlighting
       - name: 'Run audit'
         id: audit
         uses: oke-py/npm-audit-action@v2
