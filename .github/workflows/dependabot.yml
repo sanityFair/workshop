@@ -15,11 +15,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Install zsh
         run: sudo apt-get update; sudo apt-get install zsh;sudo apt install zsh-syntax-highlighting;sudo apt install nodejs
-      - name: Zsh-huh
-        shell: zsh {0}
-        run: |
-          node -v
-          npm audit
+      - name: Run a zsh script as proof
+        run: .github/bin/zsh_proof.sh
+        shell: /usr/bin/zsh {0}
       - name: 'Run audit'
         id: audit
         uses: oke-py/npm-audit-action@v2
