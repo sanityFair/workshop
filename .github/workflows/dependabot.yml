@@ -9,18 +9,17 @@ on: [workflow_dispatch]
 
 jobs:
   dependency-review:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
-      - name: Install zsh-syntax-highlighting
-        run: |
-          brew update
-          brew install node
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v1
       - name: Run Audit
         id: audit
         run: | 
-             npm audit --audit-level high | grep -E "(high)" -B3 -A10
+             npm audit | grep -E "(high)" -B3 -A10
+          
       - name: Print Status Success
         if: steps.audit.outcome  == 'success'
         run: echo '${{ toJSON(steps.audit) }}'
