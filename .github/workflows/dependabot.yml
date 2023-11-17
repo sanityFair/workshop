@@ -22,6 +22,7 @@ jobs:
         shell: zsh {0}
         run: |
           echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+          cat ~/.zshrc
           node -v
           npm audit
       - name: 'Run audit'
