@@ -18,9 +18,15 @@ jobs:
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
       - name: Run Audit
+        id: audit
         run: | 
              npm audit | grep -E "(high)" -B3 -A10
-          
+      - name: Print Status Success
+        if: steps.audit.outcome  == 'success'
+        run: echo '${{ toJSON(steps.audit) }}'
+      - name: Print Status failure
+        if: steps.audit.outcome  == 'failure'
+        run: echo '${{ toJSON(steps.audit) }}'
 #      - name: 'Run audit'
 #       id: audit
 #        uses: oke-py/npm-audit-action@v2
@@ -30,9 +36,4 @@ jobs:
 #         github_token: ${{ secrets.GITHUB_TOKEN }}
 #         issue_assignees: oke-py
 #         issue_labels: vulnerability
-#     - name: Print Status Success
-#       if: steps.audit.outcome  == 'success'
-#       run: echo '${{ toJSON(steps.audit) }}'
-#     - name: Print Status failure
-#       if: steps.audit.outcome  == 'failure'
-#       run: echo '${{ toJSON(steps.audit) }}'
+
