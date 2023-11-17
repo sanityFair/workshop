@@ -21,6 +21,7 @@ jobs:
       - name: Run a zsh script as proof
         run: |
           node -v
+          npm audit
       - name: 'Run audit'
         id: audit
         uses: oke-py/npm-audit-action@v2
