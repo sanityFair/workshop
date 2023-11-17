@@ -15,6 +15,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Install zsh
         run: sudo apt-get update; sudo apt-get install zsh;sudo apt install zsh-syntax-highlighting;sudo apt install nodejs
+      - name: Make zsh script executable
+        run: chmod +x .github/workflows/zsh_proof.sh
       - name: Zsh-huh
         run: |
           which zsh || echo "No which zsh"
