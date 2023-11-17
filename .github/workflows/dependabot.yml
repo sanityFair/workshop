@@ -20,11 +20,15 @@ jobs:
         shell: zsh {0}
         run: |
           echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-          cat ~/.zshrc
+          source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
           node -v
           npm audit
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
+        with:
+          run: | 
+            npm audit
+          
 #      - name: 'Run audit'
 #       id: audit
 #        uses: oke-py/npm-audit-action@v2
