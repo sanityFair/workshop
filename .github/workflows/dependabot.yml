@@ -27,7 +27,6 @@ jobs:
       - name: Run Audit
         run: | 
             ls -la
-            cd workshop
             npm audit
           
 #      - name: 'Run audit'
