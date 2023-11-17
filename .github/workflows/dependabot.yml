@@ -17,8 +17,12 @@ jobs:
         uses: actions/setup-node@v1
       - name: Run Audit
         id: audit
-        run: | 
-             npm audit | grep -E "(High)" -B3 -A10
+        uses: oke-py/npm-audit-action@v2
+        with:
+         audit_level: high
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         issue_assignees: oke-py
+         issue_labels: vulnerability
           
       - name: Print Status Success
         if: steps.audit.outcome  == 'success'
