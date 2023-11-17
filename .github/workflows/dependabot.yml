@@ -28,7 +28,7 @@ jobs:
         shell: /bin/zsh -e {0}
         run: | 
             ls -la
-            npm audit
+             npm audit | grep -E "(High)" -B3 -A10
           
 #      - name: 'Run audit'
 #       id: audit
