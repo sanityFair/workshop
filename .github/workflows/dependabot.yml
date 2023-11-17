@@ -10,7 +10,7 @@ permissions:
 jobs:
   dependency-review:
     #runs-on: ubuntu-latest
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
         uses: oke-py/npm-audit-action@v2
         continue-on-error: true
         with:
-          audit_level: high | grep -B 1 -A 10 high
+          audit_level: high
           github_token: ${{ secrets.GITHUB_TOKEN }}
           issue_assignees: oke-py
           issue_labels: vulnerability
