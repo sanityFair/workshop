@@ -1,10 +1,10 @@
 name: 'Dependency Review'
-on: [pull_request]
+on: [workflow_dispatch]
 
-permissions:
-  discussions: write
-  contents: read
-  pull-requests: write
+# permissions:
+#  discussions: write
+#  contents: read
+#  pull-requests: write
   
 
 jobs:
@@ -25,18 +25,18 @@ jobs:
           cat ~/.zshrc
           node -v
           npm audit
-      - name: 'Run audit'
-        id: audit
-        uses: oke-py/npm-audit-action@v2
-        continue-on-error: true
-        with:
-          audit_level: high
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          issue_assignees: oke-py
-          issue_labels: vulnerability
-      - name: Print Status Success
-        if: steps.audit.outcome  == 'success'
-        run: echo '${{ toJSON(steps.audit) }}'
-      - name: Print Status failure
-        if: steps.audit.outcome  == 'failure'
-        run: echo '${{ toJSON(steps.audit) }}'
+#      - name: 'Run audit'
+#       id: audit
+#        uses: oke-py/npm-audit-action@v2
+#        continue-on-error: true
+#       with:
+#         audit_level: high
+#         github_token: ${{ secrets.GITHUB_TOKEN }}
+#         issue_assignees: oke-py
+#         issue_labels: vulnerability
+#     - name: Print Status Success
+#       if: steps.audit.outcome  == 'success'
+#       run: echo '${{ toJSON(steps.audit) }}'
+#     - name: Print Status failure
+#       if: steps.audit.outcome  == 'failure'
+#       run: echo '${{ toJSON(steps.audit) }}'
