@@ -24,8 +24,10 @@ jobs:
           node -v
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
-        with:
-          run: | 
+      - name: Run Audit
+        run: | 
+            ls -la
+            cd workshop
             npm audit
           
 #      - name: 'Run audit'
