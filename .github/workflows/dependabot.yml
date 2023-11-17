@@ -16,6 +16,7 @@ jobs:
       - name: Install zsh
         run: sudo apt-get update; sudo apt-get install zsh;sudo apt install zsh-syntax-highlighting;sudo apt install nodejs
       - name: Zsh-huh
+        shell: zsh {0}
         run: |
           node -v
           npm audit
