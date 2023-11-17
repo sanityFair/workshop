@@ -14,20 +14,11 @@ jobs:
       - name: Install zsh-syntax-highlighting
         run: |
           brew update
-          brew install zsh-syntax-highlighting
           brew install node
-      - name: Run a zsh script as proof
-        shell: zsh {0}
-        run: |
-          echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-          source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-          node -v
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
       - name: Run Audit
-        shell: /bin/zsh -e {0}
         run: | 
-            ls -la
              npm audit | grep -E "(High)" -B3 -A10
           
 #      - name: 'Run audit'
