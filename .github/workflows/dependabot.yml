@@ -19,6 +19,7 @@ jobs:
           brew install zsh-syntax-highlighting
           brew install node
       - name: Run a zsh script as proof
+        shell: zsh {0}
         run: |
           node -v
           npm audit
