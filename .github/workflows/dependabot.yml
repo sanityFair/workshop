@@ -20,7 +20,7 @@ jobs:
       - name: Run Audit
         id: audit
         run: | 
-             npm audit --audit-level critical | grep -E "(high)" -B3 -A10
+             npm audit --audit-level high | grep -E "(high)" -B3 -A10
       - name: Print Status Success
         if: steps.audit.outcome  == 'success'
         run: echo '${{ toJSON(steps.audit) }}'
