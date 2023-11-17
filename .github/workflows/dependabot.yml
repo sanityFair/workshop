@@ -22,7 +22,6 @@ jobs:
           echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
           source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
           node -v
-          npm audit
       - name: 'Checkout Repository'
         uses: actions/checkout@v4
         with:
