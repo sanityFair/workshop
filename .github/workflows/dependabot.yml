@@ -2,7 +2,7 @@ name: 'Dependency Review'
 on:
   pull_request:
      paths-ignore:
-       - 'src/*.ts'
+       - 'src/*.tsx'
 
 permissions:
   discussions: write
