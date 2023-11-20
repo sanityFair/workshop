@@ -1,8 +1,8 @@
 name: 'Dependency Review'
 on:
   pull_request:
-     paths-ignore:
-       - 'src/*.tsx'
+     paths:
+       - 'src/index.tsx'
 
 permissions:
   discussions: write
