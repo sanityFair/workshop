@@ -1,8 +1,9 @@
 name: 'Dependency Review'
 on:
   pull_request:
-    paths-ignore:
-      - 'workshop/src/**'
+    paths:
+      - 'src/**'
+      - '!src/app/**'
 
 permissions:
   discussions: write
