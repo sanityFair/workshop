@@ -9,8 +9,6 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    env:
-      NODE_VERSION: 18
 
     steps:
       - uses: actions/checkout@v3
