@@ -1,7 +1,3 @@
-ARG NODE_VERSION=18
-
-FROM node:${NODE_VERSION}-buster as base
-
-WORKDIR /app
-
-FROM base as builder
+FROM node:alpine
+ARG NODE_VERSION
+RUN echo "Using Node version $NODE_VERSION"
