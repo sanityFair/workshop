@@ -10,21 +10,24 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: Deploy using secret
+      run: echo ${{ secrets.NODE_VERSION }}
       
-    - name: Login to GitHub Container Registry
-      uses: docker/login-action@v1
-      with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Checkout code
+    #   uses: actions/checkout@v2
       
-    - name: Build and push
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        file: ./Dockerfile.client
-        push: true
-        build-args: |
-          NODE_VERSION=18
+    # - name: Login to GitHub Container Registry
+    #   uses: docker/login-action@v1
+    #   with:
+    #       registry: ghcr.io
+    #       username: ${{ github.actor }}
+    #       password: ${{ secrets.GITHUB_TOKEN }}
+      
+    # - name: Build and push
+    #   uses: docker/build-push-action@v2
+    #   with:
+    #     context: .
+    #     file: ./Dockerfile.client
+    #     push: true
+    #     build-args: |
+    #       NODE_VERSION=18
