@@ -15,12 +15,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install main deps
-        run: yarn
-      - name: Initialize
-        run: yarn lerna bootstrap
-      - name: Build
-        run: yarn build
       - name: set lower case owner name
         run: |
           echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
