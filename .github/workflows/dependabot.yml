@@ -1,40 +1,54 @@
-name: 'Dependency Review'
-on:
-  pull_request:
-    paths-ignore:
-      - '**'
+name: Push to GitHub Container Registry
 
-permissions:
-  discussions: write
-  contents: read
-  pull-requests: write
+on:
+  push:
+    branches:
+      - main
+      - dev
 
 jobs:
-  dependency-review:
+  build-and-push:
     runs-on: ubuntu-latest
-    steps:
-      - name: Print github
-        run: |
-            echo '${{ toJSON(github) }}'
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v1
-      - name: Npm install
-        run: |
-          npm install
-      - name: Run Audit
-        id: audit
-        uses: oke-py/npm-audit-action@v2
-        with:
-         audit_level: critical
-         github_token: ${{ secrets.GITHUB_TOKEN }}
-         issue_assignees: oke-py
-         issue_labels: vulnerability
-      - name: Status success
-        if: steps.audit.outcome  == 'success'
-        uses: hmarr/auto-approve-action@v3
-      - name: Status failure
-        if: steps.audit.outcome  == 'failure'
-        run: echo '${{ toJSON(steps.audit) }}'
 
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install main deps
+        run: yarn
+      - name: Initialize
+        run: yarn lerna bootstrap
+      - name: Build
+        run: yarn build
+      - name: set lower case owner name
+        run: |
+          echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV}
+        env:
+          OWNER: '${{ github.repository_owner }}'
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push client image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile.client
+          build-args: |
+              NODE_VERSION=${{ env.NODE_VERSION }}
+          push: true
+          tags: ghcr.io/${{ env.OWNER_LC }}/${{ github.event.repository.name }}/client:${{ github.sha }}
+
+      - name: Build and push server image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile.server
+          build-args: |
+              NODE_VERSION=${{ env.NODE_VERSION }}
+          push: true
+          tags: ghcr.io/${{ env.OWNER_LC }}/${{ github.event.repository.name }}/server:${{ github.sha }}
