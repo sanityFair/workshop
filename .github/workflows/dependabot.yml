@@ -27,4 +27,4 @@ jobs:
         file: ./Dockerfile.client
         push: true
         build-args: |
-          NODE_VERSION=${{ secrets.NODE_VERSION }}
+          NODE_VERSION=18
