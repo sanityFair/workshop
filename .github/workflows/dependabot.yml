@@ -10,7 +10,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     env:
-      NODE_VERSION: ${{ secrets.NODE_VERSION }}
+      NODE_VERSION: 18
 
     steps:
       - uses: actions/checkout@v3
@@ -28,9 +28,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Print environment variables
+      - name: Display environment variables
         run: |
-          echo "NODE_VERSION=$NODE_VERSION"
+          echo "PATH=$PATH"
+          echo "HOME=$NODE_VERSION"
+          echo "NODE_VERSION=$(printenv | grep NODE_VERSION)"
 
       - name: Build and push client image
         uses: docker/build-push-action@v2
