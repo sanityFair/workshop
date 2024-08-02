@@ -1,9 +1,7 @@
 ARG NODE_VERSION=18
 
-FROM node:18-buster as base
+FROM node:${NODE_VERSION}-buster as base
 
 WORKDIR /app
 
 FROM base as builder
-
-COPY packages/client/package.json yarn.lock ./
