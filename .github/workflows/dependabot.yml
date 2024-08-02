@@ -28,9 +28,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Print environment variables
         run: |
-          echo "PATH=$PATH"
-          echo "HOME=$HOME"
-          echo "NODE_VERSION=$NODE_VERSION"
+          echo "NODE_VERSION=${{ env.NODE_VERSION }}"
 
       - name: Build and push client image
         uses: docker/build-push-action@v2
