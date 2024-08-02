@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy using secret
-      run: echo ${{ env.NODE_VERSION }}
+      run: echo ${{ NODE_VERSION }}
       
     # - name: Checkout code
     #   uses: actions/checkout@v2
