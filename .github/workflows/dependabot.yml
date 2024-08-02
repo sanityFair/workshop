@@ -9,6 +9,8 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    env:
+      NODE_VERSION: ${{ secrets.NODE_VERSION }}
 
     steps:
       - uses: actions/checkout@v3
@@ -28,7 +30,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Print environment variables
         run: |
-          echo "NODE_VERSION=${{ env.NODE_VERSION }}"
+          echo "NODE_VERSION=$NODE_VERSION"
 
       - name: Build and push client image
         uses: docker/build-push-action@v2
