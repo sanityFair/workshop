@@ -32,6 +32,7 @@ jobs:
         with:
           context: .
           file: Dockerfile.client
-          build-args: NODE_VERSION=${{ env.NODE_VERSION }}
+          build-args: |
+            NODE_VERSION: ${{ secrets.NODE_VERSION }}
           push: true
           tags: ghcr.io/${{ env.OWNER_LC }}/${{ github.event.repository.name }}/client:${{ github.sha }}
