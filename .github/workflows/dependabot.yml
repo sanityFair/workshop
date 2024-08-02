@@ -12,7 +12,6 @@ jobs:
     steps:
     - name: Deploy using secret
       run: echo $NODE_VERSION
-      
     # - name: Checkout code
     #   uses: actions/checkout@v2
       
